@@ -64,10 +64,10 @@ function game() {
     console.log(`computer selects: ${computerChoice}`);
     playRound(playerChoice, computerChoice);
     if (player === 5) {
-      console.log("player wins the Games");
+      alert("player wins the Games");
       break;
     } else if (computer === 5) {
-      console.log("Computer wins the Games");
+      alert("Computer wins the Games");
       break;
     }
   }
