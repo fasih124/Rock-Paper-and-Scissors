@@ -1,4 +1,7 @@
-console.log("hello world");
+// globle variable of player
+let computer = 0;
+let player = 0;
+
 // function to get random Cumputer Choice
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -20,32 +23,54 @@ function getplayerChoice() {
 }
 
 // check who wins
-function playRound(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) {
-    return "Draw";
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    console.log("Draw");
+    return 0;
   } else {
-    if (playerChoice === "Paper" && computerChoice === "Scissors") {
-      return "Computer Wins";
-    } else if (playerChoice === "Paper" && computerChoice === "Rock") {
-      return "Player Wins";
-    } else if (playerChoice === "Rock" && computerChoice === "Scissors") {
-      return "Player Wins";
-    } else if (playerChoice === "Rock" && computerChoice === "Paper") {
-      return "Computer Wins";
-    } else if (playerChoice === "Scissors" && computerChoice === "Rock") {
-      return "Computer Wins";
-    } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
-      return "Player Wins";
+    if (playerSelection === "Paper" && computerSelection === "Scissors") {
+      console.log("Computer Wins");
+      return ++computer;
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+      console.log("player Wins");
+      return ++player;
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+      console.log("player Wins");
+      return ++player;
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+      console.log("Computer Wins");
+      return ++computer;
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+      console.log("Computer Wins");
+      return ++computer;
+    } else if (
+      playerSelection === "Scissors" &&
+      computerSelection === "Paper"
+    ) {
+      console.log("player Wins");
+      return ++player;
     } else {
-      return "invalid Choice";
+      console.log("invalid Choice");
+      return 0;
     }
   }
 }
 
-//    testing the result of functions
-let computerChoice = getComputerChoice();
-console.log(computerChoice);
-let playerChoice = getplayerChoice();
-console.log(playerChoice);
-let result = playRound(playerChoice, computerChoice);
-console.log(result);
+function game() {
+  for (let i = 0; i < 10; i++) {
+    let playerChoice = getplayerChoice();
+    let computerChoice = getComputerChoice();
+    console.log(`player selects: ${playerChoice}`);
+    console.log(`computer selects: ${computerChoice}`);
+    playRound(playerChoice, computerChoice);
+    if (player === 5) {
+      console.log("player wins the Games");
+      break;
+    } else if (computer === 5) {
+      console.log("Computer wins the Games");
+      break;
+    }
+  }
+}
+
+game();
