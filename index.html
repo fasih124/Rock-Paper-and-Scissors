@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      console.log("hello world");
+      // function to get random Cumputer Choice
+      function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+        return randomNumber === 1
+          ? "Rock"
+          : randomNumber === 2
+          ? "Paper"
+          : randomNumber === 3
+          ? "Sicssor"
+          : "none";
+      }
+      //    testing the result of function getComputerChoice()
+      let computerChoice = getComputerChoice();
+      console.log(computerChoice);
+    </script>
+    <title>My Game</title>
+  </head>
+  <body></body>
+</html>
