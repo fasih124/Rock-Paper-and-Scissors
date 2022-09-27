@@ -20,12 +20,11 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
+  background-color: var(--color-1);
   color: var(--color-4);
   height: 100vh;
-
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
 }
 
@@ -49,6 +48,15 @@ li {
 nav a {
   text-decoration: none;
   color: inherit;
+  border: #e94560 3px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--color-4);
+  color: var(--color-1);
 }
 /* main */
 
@@ -92,8 +100,6 @@ main {
   font-weight: 700;
 }
 
-.Scores {
-}
 .pointTable {
   display: flex;
   justify-content: center;
