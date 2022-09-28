@@ -27,12 +27,6 @@ options.forEach((option) => {
     if (player === 6 || computer === 6) {
       resetGame();
     }
-    console.log(option.textContent);
-    console.log("check");
-    console.log(playerChoice);
-    console.log(computerChoice);
-    console.log(player);
-    console.log(computer);
   });
 });
 
